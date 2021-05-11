@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício1Rocketseat</title>
+    <link rel="stylesheet" href="./formStyle.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;700&display=swap" rel="stylesheet">
+</head>
+
+    <body>  
+        
+        <script src="./scriptForm.js"></script>
+
+        <fieldset id="formgeral">
+
+            <legend id="titulo">Formulário de Vendas</legend>
+            
+            <main>
+
+                <div id="contcliente">
+    
+                    <form id="container" autocomplete="off">
+    
+                        <fieldset id="client">
+                            <legend></legend>
+                                <h2>Cliente</h2>
+                                <label id="nome">Nome:</label><input class="campo_nome" type="text" autofocus><br>
+                                <label>Endereço:</label><input class="campo_endereco" type="text"><br>
+                                <label>CPF:</label><input oninput="mascara(this, 'cpf')" class="campo_CPF" type="text" 
+                                                    placeholder="000.000.000-00" autocomplete="off" name="cliente['cpf']">
+                                <div id="alinhar_label_rg">
+                                    <label>RG:</label><input oninput="mascara(this, 'rg')" class="campo_RG" type="text" 
+                                                    placeholder="00.000.000-0" autocomplete="off" name="cliente['rg']">
+                                </div>
+                                <div id="alinhar_label_cep">
+                                    <label>CEP:</label><input oninput="mascara(this, 'cep')" class="campo_cep" type="text" 
+                                                        placeholder="00.000-00" autocomplete="off" name="cliente['cep']"><br>
+                                </div>
+                                <label>Cidade:</label><input class="campo_cidade" type="text">
+                                <div id="alinhar_label_st">
+                                    <label>Estado:</label><br>
+                                </div>
+                                <input class="campo_st" type="text" list="statesdata" placeholder="Estado:">
+                                <datalist id="statesdata">
+                                    <option>AC</option>
+                                    <option>AL</option>
+                                    <option>AP</option>
+                                    <option>AM</option>
+                                    <option>BA</option>
+                                    <option>CE</option>
+                                    <option>DF</option>
+                                    <option>ES</option>
+                                    <option>GO</option>
+                                    <option>MA</option>
+                                    <option>MT</option>
+                                    <option>MS</option>
+                                    <option>MG</option>
+                                    <option>PA</option>
+                                    <option>PB</option>
+                                    <option>PE</option>
+                                    <option>PR</option>
+                                    <option>PI</option>
+                                    <option>RJ</option>
+                                    <option>RN</option>
+                                    <option>RS</option>
+                                    <option>RO</option>
+                                    <option>RR</option>
+                                    <option>SC</option>
+                                    <option>SP</option>
+                                    <option>SE</option>
+                                    <option>TO</option>
+                                </datalist>
+                                
+                                <div id="alinhar_label_nasc">
+                                    <label id="nascimento">Data de Nascimento:</label>
+                                    <input class="campo_nascimento" type="date">
+                                </div>
+                                <div id="alinhar_label_fone">
+                                    <label id="fone">Telefone:</label>
+                                    <input oninput="mascara(this, 'tel')" class="campo_fone" type="text"
+                                            placeholder="(00)000000-0000" autocomplete="off" name="cliente['fone']">
+                                </div>
+                                
+                                
+                                <fieldset id="civilst">
+                                    <legend></legend>
+                                        <h3>Estado Civil</h3>
+                                        <div>
+                                            <label><input type="radio" id="single" name="civilstate" value="1">Solteiro</label><br>
+                                           <label><input type="radio" id="married" name="civilstate" value="2">Casado</label><br>
+                                            <label><input type="radio" id="divorced" name="civilstate" value="3">Divorciado</label><br>
+                                            <label><input type="radio" id="widower" name="civilstate" value="4">Viúvo</label><br>
+                                        </div>
+                                    </fieldset>
+    
+                                <fieldset id="sex">
+                                    <legend></legend>
+                                        <h3>Sexo</h3>
+                                        <label><input type="radio" id="masc" name="sex" value="1">Masculino</label><br>
+                                        <label><input type="radio" id="fem" name="sex" value="2">Feminino</label><br>
+                                        <label><input type="radio" id="undefined" name="sex" value="3">Não Definido</label><br>
+                                </fieldset>
+    
+                        </fieldset>
+    
+                    </form>
+    
+                </div>
+    
+                <div id="contvenda">
+    
+                    <form id="containervenda" autocomplete="off">
+    
+                        <fieldset id="sell">
+                            <legend></legend>
+                                <h2>Venda</h2>
+                                <div id="alinhar_label_id">
+                                    <label id="id">ID:</label><input class="campo_id" type="text" size="2">
+                                </div>
+                                <div  id="button1">
+                                    <input type="submit" name="botao" value="Inserir Produto" class="botaoInserir" style="float: right;">
+                                </div>
+                                <label id="comprador">Comprador:</label><input class="campo_compra" type="text"><br>
+                                <div id="alinhar_label_preco">
+                                    <label id="preco">Preço Unitário:</label>
+                                    </label><input id="alinhar_campo_preco" class="campo_preco" type="number" step="0.01" placeholder="R$ 0,00"><br>
+                                </div>
+                                <label id="produto">Produto:</label></label><input class="campo_produto" type="text"><br>
+                                <div id="alinhar_label_qtde">
+                                    <label id="qtde">Quantindade:</label>
+                                    </label><input id="alinhar_campo_qtde" class="campo_qtde" type="number" placeholder="0"><br>
+                                </div>
+
+                                <div class="dbgrid">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Produto</th>
+                                                <th>Quantidade</th>
+                                                <th>Preço Unitário</th>
+                                                <th>Preço Total</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>01</td>
+                                                <td>Vassoura</td>
+                                                <td>01</td>
+                                                <td>R$ 12.00</td>
+                                                <td>R$ 12.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>02</td>
+                                                <td>Arroz</td>
+                                                <td>02</td>
+                                                <td>R$ 25.00</td>
+                                                <td>R$ 50.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>03</td>
+                                                <td>Suco</td>
+                                                <td>30</td>
+                                                <td>R$ 0.99</td>
+                                                <td>R$ 29.70</td>
+                                            </tr>
+                                            <tr>
+                                                <td>04</td>
+                                                <td>Bolacha</td>
+                                                <td>05</td>
+                                                <td>R$ 1.20</td>
+                                                <td>R$ 6.00</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div id="alinhar_label_total">
+                                    <label id="total">Total:</label>
+                                    </label><input id="alinhar_campo_total" class="campo_total" type="number" placeholder="R$ 97.70"><br>
+                                </div>
+
+                        </fieldset>
+
+                        
+                        
+                    </form>
+    
+                </div>
+
+                <div  id="button2">
+                    <input type="submit" name="botao" value="Enviar Dados" class="botaoEnviar">
+                </div>
+                    
+            </main>
+            
+        </fieldset>
+
+
+        
+        <footer id="rodape">
+            Exercício 1 - Formulário <br>
+            Desenvolvido por JIL-Fast Solution Technologies <br>
+            <a href="https://jil-informatica-fastsolutiontechnologies.negocio.site/?m=true" target="_blank" class="link"> Visite nosso site.</a>
+            <a href="https://dev.to/isaias">
+                <img src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg" alt="José Isaias Lourenço's DEV Community Profile" height="30" width="30">
+            </a>
+        </footer>
+        
+    </body>
+</html>
